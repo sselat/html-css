@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 13</title>
+
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+        }
+        h1{
+            margin:auto;
+            border: 1px solid black;
+            border-bottom: none;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 20px;
+            width: fit-content;
+            background-color: gray;
+            color: white;
+        }
+        caption{
+            border: 1px solid black;
+            border-bottom: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 0;
+            background-color: gray;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        table{
+            width: 500px;
+            border: 1px solid black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            text-align: center;
+            margin: auto;
+            padding: 2px;
+        }
+        td{
+            background-color: white;
+            border: 1px solid black;
+            font-weight: bolder;
+
+        }
+        td[colspan], td[rowspan] {
+            background-color: black;
+            color: white;
+            font-weight: bolder;
+        }
+        a{
+            text-decoration: none;
+            font-size: larger;
+            transition: .5s;
+        }
+        a::after{
+            content: ' → ';
+            font-weight: bold;
+        }
+
+        a:hover{
+            background-color: black;
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio 13 - Parte 1</h1>
+    
+    <div class="conteudo">
+        <table>
+            <caption>Tabela 01</caption>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td rowspan="2">3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td colspan="3">8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td rowspan="2">10</td>
+                <td colspan="2">11</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+        </table>
+    </div>
+
+    <p><a href="tabela2.html">Seguir para a Tabela 02</a></p>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 13</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+        }
+        h1{
+            margin:auto;
+            border: 1px solid black;
+            border-bottom: none;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 20px;
+            width: fit-content;
+            background-color: black;
+            color: white;
+        }
+        caption{
+            border: 1px solid black;
+            border-bottom: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 0;
+            background-color: black;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        table{
+            width: 500px;
+            border: 1px solid black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            text-align: center;
+            margin: auto;
+            padding: 2px;
+        }
+        td{
+            background-color: white;
+            border: 1px solid black;
+            font-weight: bolder;
+
+        }
+        td[colspan], td[rowspan] {
+            background-color: gray;
+            color: white;
+            font-weight: bolder;
+        }
+        a{
+            text-decoration: none;
+            font-size: larger;
+            transition: .5s;
+        }
+        a::before{
+            content: ' ← ';
+            font-weight: bold;
+        }
+
+        a:hover{
+            background-color: gray;
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio 13 - Parte 2</h1>
+    
+    <div class="conteudo">
+        <table>
+            <caption>Tabela 02</caption>
+            <tr>
+                <td colspan="4">A</td>
+                <td rowspan="4">B</td>
+            </tr>
+            <tr>
+                <td rowspan="4">C</td>
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>H</td>
+                <td>I</td>
+            </tr>
+            <tr>
+                <td>J</td>
+                <td>L</td>
+                <td>M</td>
+            </tr>
+            <tr>
+                <td colspan="4">N</td>
+            </tr>
+        </table>
+    </div>
+
+    <p><a href="tabela1.html">Voltar para a Tabela 01</a></p>
+</body>
+</html>
