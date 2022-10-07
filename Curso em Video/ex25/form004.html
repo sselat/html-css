@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select, Option e Datalist</title>
+</head>
+<body>
+    <h1>Exemplo de Formulário</h1>
+    <p>
+        <label for="iselecao">Siglas: </label>
+        <select name="selecao" id="iselecao">
+            <option value="00" selected>--- Escolha uma sigla ---</option>
+            <optgroup label="Siglas com M">
+                <option value="01">MS</option>
+                <option value="02">MT</option>
+                <option value="03">MA</option>
+                <option value="04">MB</option>
+                <option value="05">MD</option>
+            </optgroup>
+            <optgroup label="Siglas com A">
+                <option value="06">AA</option>
+                <option value="07">AB</option>
+                <option value="08">AC</option>
+                <option value="09">AD</option>
+                <option value="10">MD</option>
+            </optgroup>
+        </select>
+    </p>
+    <p>
+        <label for="iprof">Profissão:</label>
+        <input type="text" name="prof" id="iprof" list="listprof">
+        <datalist id="listprof">
+            <option>--- Escolha uma Profissão ---</option>
+            <option>Jornalista</option>
+            <option>Supervisor</option>
+            <option>Engenheiro</option>
+            <option>Programador</option>
+            <option>Bolsominion</option>
+            <option>Professor</option>
+            <option>Estudante</option>
+        </datalist>
+    </p>
+</body>
+</html>
