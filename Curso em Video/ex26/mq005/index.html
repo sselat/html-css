@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/mediaqueries.css">
     <title>Menu Responsivo</title>
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
         <h1>Meu site</h1>
-        <span id="burguer" class="material-icons">
+        <span id="burguer" class="material-icons" onclick="clickMenu()" >
             menu
             </span>
-        <menu>
+        <menu id="menu" class="">
             <ul>
                 <li><a href="">Opção 1</a></li>
                 <li><a href="">Opção 2</a></li>
@@ -33,5 +34,21 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, modi illum nostrum nobis qui pariatur repellendus reprehenderit dolorum asperiores ducimus nesciunt a adipisci alias, optio aut deserunt expedita beatae? Ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aperiam commodi ex omnis exercitationem odio sint illum quasi quam. Consequuntur alias quae sed deserunt rem. Debitis voluptate voluptas quis aspernatur?</p>
         </article>
     </main>
+    <script>
+        function mudouTamanho(){
+            if (window.innerWidth >= 768){
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+        function clickMenu(){
+        if (menu.style.display == 'block'){
+            menu.style.display = 'none';
+        } else {
+            menu.style.display = 'block';
+        }
+    }
+    </script>
 </body>
 </html>
