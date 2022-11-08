@@ -1,10 +1,10 @@
 <template>
-    <form action="">
+    <form action="#" @submit="enviarFormulario($event)">
         <div>
-            <InputText />
+            <input type="text" v-model="nome"/>
         </div>
         <div>
-            <InputText />
+            <input type="text" v-model="email">
         </div>
         <div>
             <Submit />
@@ -20,6 +20,24 @@ export default {
     components: {
         InputText,
         Submit
+    },
+    data () {
+        return {
+            nome: '',
+            email: ''
+        }
+    },
+    methods: {
+        enviarFormulario(e) {
+
+            e.preventDefault();
+            
+            const name = this.nome;
+            const email = this.email;
+
+            window.alert('Formulário Enviado!');
+            console.log(`O nome é ${name} e o email é ${email}`);
+        }
     }
 }
 </script>

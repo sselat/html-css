@@ -4,7 +4,15 @@
         <p v-else>Estou em busca de novas oportunidades!</p>
         <p>Utilizo as seguintes tecnologias para back-end:</p>
         <ul>
-            <li v-for="(technology, index) in backend_technologies" :key="index">{{ technology + index }}</li>
+            <li v-for="(technology, index) in backend_technologies" :key="index">
+                {{ technology }}
+            </li>
+        </ul>
+        <p>Utilizo as seguintes tecnologias para front-end:</p>
+        <ul>
+            <li v-for=" technology in frontend_technologies" :key="technology.id">
+                {{ technology.language }}
+            </li>
         </ul>
         <div>
             <button @click="showEmail">{{mostrar_email ? "Ocultar e-mail" : "Mostrar e-mail"}}</button>
@@ -29,7 +37,12 @@ export default {
             mostrar_email: true,
             email: "tales.beraldo@gmail.com",
             meu_link: "https://www.google.com.br",
-            backend_technologies: ['JavaScript', 'PHP', 'Python']
+            backend_technologies: ['JavaScript', 'PHP', 'Python'],
+            frontend_technologies: [
+                {id: 1, language: 'HTML'},
+                {id: 2, language: 'CSS'},
+                {id: 3, language: 'Vue'}
+            ]
         }
     },
     methods: {
