@@ -2,6 +2,7 @@
     <div>
         <button @click="ativar">Clique aqui</button>
         <span v-show="ativou">Ativado!</span>
+        <!-- Todos os componentes são reutilizáveis em outros componentes, e são independentes -->
     </div>
 </template>
 

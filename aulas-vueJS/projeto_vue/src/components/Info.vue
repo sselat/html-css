@@ -31,11 +31,13 @@ export default {
     components: {
         Picture
     },
+    props: {
+        email: String,
+        esta_trabalhando: Boolean
+    },
     data () {
         return {
-            esta_trabalhando: true,
             mostrar_email: true,
-            email: "tales.beraldo@gmail.com",
             meu_link: "https://www.google.com.br",
             backend_technologies: ['JavaScript', 'PHP', 'Python'],
             frontend_technologies: [
