@@ -5,13 +5,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testando</title>
+    <title>Cronômetro do ChatGPT</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .cronometro {
+            font-size: 5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px #ccc;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .botao {
+            font-size: 1.2rem;
+            margin: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+
+        .botao-iniciar {
+            background-color: #00a7d0;
+            color: #fff;
+        }
+
+        .botao-parar {
+            background-color: #e60000;
+            color: #fff;
+        }
+
+        .botao-zerar {
+            background-color: #f5a623;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Testando Fetch</h1>
+    <div class="container">
+        <div id="cronometro" class="cronometro">00:00:00</div>
+        <div class="botoes">
+            <button id="iniciar" class="botao botao-iniciar">Iniciar</button>
+            <button id="parar" class="botao botao-parar">Parar</button>
+            <button id="zerar" class="botao botao-zerar">Zerar</button>
+        </div>
+    </div>
     <script>
-        
+        let contadorSegundos = 0;
+        let contadorMinutos = 0;
+        let contadorHoras = 0;
+        let intervalo;
+
+        const cronometro = document.getElementById('cronometro');
+        const botaoIniciar = document.getElementById('iniciar');
+        const botaoParar = document.getElementById('parar');
+        const botaoZerar = document.getElementById('zerar');
+
+        function iniciarCronometro() {
+            intervalo = setInterval(() => {
+                contadorSegundos++;
+                if (contadorSegundos === 60) {
+                    contadorSegundos = 0;
+                    contadorMinutos++;
+                }
+                if (contadorMinutos === 60) {
+                    contadorMinutos = 0;
+                    contadorHoras++;
+                }
+                cronometro.innerHTML = `${contadorHoras.toString().padStart(2, '0')}:${contadorMinutos.toString().padStart(2, '0')}:${contadorSegundos.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function pararCronometro() {
+            clearInterval(intervalo);
+        }
+
+        function zerarCronometro() {
+            contadorSegundos = 0;
+            contadorMinutos = 0;
+            contadorHoras = 0;
+            cronometro.innerHTML = '00:00:00';
+        }
+
+        botaoIniciar.addEventListener('click', iniciarCronometro);
+        botaoParar.addEventListener('click', pararCronometro);
+        botaoZerar.addEventListener('click', zerarCronometro);
+
     </script>
 </body>
 
